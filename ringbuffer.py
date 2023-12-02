@@ -41,6 +41,7 @@ class RingBuffer:
 def calcBufSizebyPhase(data):
     """Calculates number of buffer slots
         based on # of theta phases"""
+        # TODO:
         #neurons would shift pi/8 ahead of theta phase each time
         #keep track of switches from bin to bin
         #mulyiply by pi/8 to find where u r in rhythm
