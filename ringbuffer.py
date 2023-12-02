@@ -30,6 +30,8 @@ class RingBuffer:
             the number of spikes for each neuron.
             Adds it to the current bin.
             Increments bin """
+        if self.curpos == self.oldest:
+            self.oldest +=1
         currBin = self.data[self.curpos % self.bufSize]
         for i in range(self.numNeurons):
             currBin[i] = spikesPerNeuron[i]
@@ -45,13 +47,17 @@ def calcBufSizebyPhase(data):
         # track offset between neurons using theta cycle for bins
     pass
 
+#tests
 x = RingBuffer(5, 2)
 x.add([3, 0])
 x.add([2, 1])
 x.add([0,2])
 x.add([1,3])
 x.add([2,2])
+x.add([5,1])
 print(repr(x))
+
+#TODO:generate data gaussianly
 
 #TODO/goals: 
 # main function takes a certain data set, calculates buffer size, 
