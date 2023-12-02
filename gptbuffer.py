@@ -4,7 +4,7 @@ import math
 class GPTbuffer:
     """Ring buffer class of specified size w specified # of neurons"""
 
-    def init(self, bufSize, numNeurons, sigma):
+    def __init__(self, bufSize, numNeurons, sigma):
         self.bufSize = bufSize
         self.numNeurons = numNeurons
         self.sigma = sigma
@@ -12,7 +12,7 @@ class GPTbuffer:
         self.oldest = 0
         self.curpos = 0
 
-    def repr(self):
+    def __repr__(self):
         output = ""
         for i in range(self.bufSize):
             if i == self.oldest:
@@ -38,3 +38,9 @@ class GPTbuffer:
         self.curpos = (self.curpos + 1) % self.bufSize
         if self.curpos == self.oldest:
             self.oldest = (self.oldest + 1) % self.bufSize
+
+
+gbuff = GPTbuffer(5, 2, 5)
+gbuff.add(1)
+gbuff.add(3)
+print(gbuff)
