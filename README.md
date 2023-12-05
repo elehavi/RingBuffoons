@@ -1,5 +1,4 @@
 # RingBuffoons
-# Hello this is Wolfgang Hutton
 
 ## Functions we could add:
 Overwriting: Each bin stores list of dictionaries. Each dictionary represents the spike count of each neuron after one loop thru the buffer/theta phase
@@ -29,3 +28,20 @@ Overwriting: Each bin stores list of dictionaries. Each dictionary represents th
  - Mar's levels -- what level vs how level vs computation aspect/why
  - ring buffer contexts. memory access
  - here is our mapping of variables.
+
+FINAL WRITE UP BELOW
+
+# Ring Buffer Explanation
+
+# Phase Precession Components 
+
+# What initially seems connected 
+
+# Possible way of implementing phase precession in ring buffer
+
+# What this implementation do?
+- Marr's Levels - what has been typically looked at, how does this mapping combine various fields
+
+# Not entirely concrete, since there are aspects of each that don't necessarily allow for a direct modeling of the process, but there are interesting similarities between the two realms to be interesting from a conceptual standpoint. The two have not been mixed in the past, may be helpful in conceptualization, interesting connections from somewhat separate domains
+
+
