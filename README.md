@@ -32,6 +32,7 @@ Overwriting: Each bin stores list of dictionaries. Each dictionary represents th
 FINAL WRITE UP BELOW
 
 # Ring Buffer Explanation
+Ella
 
 # Phase Precession Components 
 
