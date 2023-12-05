@@ -14,5 +14,18 @@ Overwriting: Each bin stores list of dictionaries. Each dictionary represents th
  - bin ur in is reading. writing deposits spikes to be read out. 
  - at each loop: read takes in data. write sorts data into dictionary. 
  - getting data into buffer is write, read catches up and reads/sorts # of spikes
+
+
  - biggest similarity: if u represent this way, the point where it starts a new loop is where spiking occurs at same point in theta rhythm
  -- lagging... then next time it fires = when it "overwrites"
+
+
+ - writing can b faster than read
+ -- imagine 1 buffer per neuron. it becomes overwritten when it stops being part of the scene.
+ -- start at 1 extreme, go to other extreme, then be done.
+ -- write is less than 1 cycle ahead of the read. when write is more than 1 cycle ahead of read, then that neuron is no longer functioning/silent
+ -- then what are bins? theta vs spike count
+
+ - Mar's levels -- what level vs how level vs computation aspect/why
+ - ring buffer contexts. memory access
+ - here is our mapping of variables.
