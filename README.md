@@ -44,5 +44,6 @@ Ella
 - Marr's Levels - what has been typically looked at, how does this mapping combine various fields
 
 # Not entirely concrete, since there are aspects of each that don't necessarily allow for a direct modeling of the process, but there are interesting similarities between the two realms to be interesting from a conceptual standpoint. The two have not been mixed in the past, may be helpful in conceptualization, interesting connections from somewhat separate domains
+- Even if not entirely aligned in a way that would simulate the process by showing how the two components (theta and neuron) progress individually and simultaneously, still interesting that these two separate domains are conceptually relatable and that we can demonstrate the relationship through systems with properties that share a resemblence 
 
 
