@@ -49,7 +49,7 @@ Ella
 
 
 
-### Introduction 
+## Introduction 
 
 This project began from interest spanning domains unfamiliar to each other, made enticing by what appeared to be beneath-surface-level counterparts between these previously separate domains. Namely, it appeared as if the computational ring buffer possessed qualities that aligned with those of the more neurobiological phase precession, as was seen in the papers and data from our assignments. These shared aspects seemed to include storage capacities, organization, and, most saliently, a relationship defined by an "offset" or delay.
 
