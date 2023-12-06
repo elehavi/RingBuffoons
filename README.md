@@ -57,7 +57,7 @@ In order to determine how we could implement phase precession within a ring buff
 
 ### Ring Buffers
 
-A ring buffer is a data structure often used in "buffering" data streams, such as videos. A ring buffer is structured in a circular shape with slots that hold data. A write pointer
+A ring buffer is a data structure shaped like a circle with a predetermined number of slots. Ring buffers have a  Data streams, such as video streaming, use ring buffers beca
 
 ### Phase Precession
 
