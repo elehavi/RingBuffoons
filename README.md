@@ -57,9 +57,11 @@ In order to determine how we could implement phase precession within a ring buff
 
 ### Ring Buffers
 
-A ring buffer is a data structure shaped like a circle with a predetermined number of slots. Ring buffers have a  Data streams, such as video streaming, use ring buffers beca
+A ring buffer is a data structure shaped (conceptually) like a circle with a predetermined number of slots. Ring buffers usually have two pointers: a write pointer and a read pointer. The write pointer takes data and write it into slots of the buffer, while the read pointer looks at data in the buffer and write it out to another destination. To ensure that no data is overwritten before it is read, the write pointer must not lap the read buffer and must be less than the sum of the read pointer's location and size of the buffer. Alternatively, to ensure that no data is reread, the read buffer must always be less than the write buffer.
 
-blah bla blah blah blah blah meow meow meow meow meow meow meow meow
+Data streams, such as video streaming, use ring buffers because of its first in, first out properties and maximum size. In the example of video streaming, the write pointer would take clips of a video and store them in slots in the ring buffer, and the read pointer would read those clips onto a user's computer. This way, the video streaming service does not need to send the whole video at once, which would take more time than sending it in pieces using a buffer.
+
+
 ### Phase Precession
 
 
