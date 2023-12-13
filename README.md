@@ -31,5 +31,27 @@ This, though, is where we ran into what could be called the beginning of the end
 
 While the offset relationship between the neuron and theta cycle could be expressed by using the theta phase for bins, or by using position bins coupled with respective read and writes for both the neuron and theta cycle, that merely takes advantage of the ring buffer's components as tools to paint a picture, not to simulate a process that aligns with those components' properties. There is no choice we could find that would reconcile matching the neuron and cycle to either the read or write while still preserving the properties of each system. It also would not be accurate to even say that the neurobiological components and the ring buffer components serve different purposes, as the neurobiological components-- given our current knowledge-- are better described as phenomena than tools. Additionally, the neuroscience components and their relationship make up (for the sake of interpretation) one simultaneous process in which we are observing two things occur at the same time and noticing the offset relationship between them. Even though the offset may serve a purpose for temporal and spatial memory consolidation, it does not appear to exist specifically for that reason. Meanwhile, the read and write perform two different processes. Their offset enables them to accomplish a single overarching goal, but they operate separately on *one set/stream of data*, reemphasizing how *this* offset is a tool, while the other is a consequence. 
 
+
 We really hated to leave it on this note, wanting so desperately to find a solution that would allow this connection to be made. Alas, it seemed that trying to force a connection was tenuous at best. That doesn't mean we can't appreciate the similarities and connections we *did* find, though. We started off this journey, for lack of a better term, being genuinely excited about combining our experience with our respective fields and mixing elements together that seemed remarkably similar given the differences in their contexts. (This "remarkability", of course, was because it was too good to be true after investigation). If it did work, it would have been a fascinating connection to make, but arguably, ending on this note requires us to have gone through far more critical thinking, deliberation, and exploration in this unique topic that we wouldn't have otherwise looked into to this degree. Our means led us to a different end than we originally expected, and while frustrating and unfamiliar and truly a battle between determination and humility, it was a valuable experience. Now knowing that this connection may not be fulfilled in the way we anticipated, we can appreciate how these domains (which were even more separate than we originally realized) resemble each other. Our defeat, we suppose, does not invalidate how interesting the similarities are, even if this is where they end. In the end, being *confident* about why we were wrong became our goal, and it was incredibly rewarding to be able to articulate this lack of a relationship convincingly. 
 
+---
+
+## Code Documentation
+
+This section outlines the code in the Python files included in this repository.
+
+### ringbuffer.py
+
+This file lays out the definition for a ring buffer class in Python, where each slot represents a certain interval and contains the firing rate of certain neurons in said interval. Users can construct a ring buffer by passing the number of neurons and the size of the interval. Here are the member variables of the class:
+
+* __binSize__ : This variable is passed into the constructor and determines the size of each bin.
+* __numNeurons__ : Similarly, this variable is passed to the constructor and lays out the number of neurons.
+* __numBins__ : This variable represents the number of bins. To calculate this variable, we use 6π for the first neuron, and add an additional 2π for the rest of the neurons. Then, we divide that sum by the size of each bin to find the number of bins we are creating.
+* __data__ : This variable contains a python array representing the slots in our buffer. Each 'slot' has a dictionary, where the keys represent the neurons and the value of each neuron is its spike count in the current bin.
+* __oldest__ and __curpos__ : These two pointers represent the oldest untouched bin, and the current bin that we are updating. These two pieces of ring buffer functionality are less applicable to our neuroscience context.
+
+Additionally, we have an "add" function that takes in an ordered list of integers, representing the spike count of each neuron, and translates that into the spike count of the neurons in the bin indexed by curpos.
+
+### gptbuffer.py
+
+This file is the result of passing our code into chatGPT and asking it to generate spikes from a gaussian. In addition to the aforementioned functionality, this file includes the function "gaussian_spike_count," which takes in a phase and generates a number of spikes.
